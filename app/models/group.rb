@@ -1,5 +1,6 @@
 class Group < ApplicationRecord
     has_and_belongs_to_many :products
+    has_paper_trail
 
     validates :name, :description, :products, presence: true
 

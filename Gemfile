@@ -25,6 +25,7 @@ gem 'rails_admin', '~> 2.0'
 gem 'rails_admin_rollincode', '~> 1.0'
 gem 'devise'
 gem 'devise-i18n'
+gem 'paper_trail'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

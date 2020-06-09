@@ -2,6 +2,7 @@
 
 class Product < ApplicationRecord
   has_and_belongs_to_many :group, optional: true
+  has_paper_trail
 
   validates :name, :description, :minutes, presence: true
 

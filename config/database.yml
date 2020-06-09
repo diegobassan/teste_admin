@@ -11,6 +11,9 @@ default: &default
 
 development:
   <<: *default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
   database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
@@ -21,5 +24,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: teste_admin_development
+  pool: 5
+  username: teste_admin
+  password: 123456

@@ -1,0 +1,29 @@
+notifications:
+  email: false
+language: ruby
+cache:
+- bundler
+before_install:
+- gem update --system
+- gem install bundler
+- gem update bundler
+- bundle install
+before_script:
+- bundle exec rails db:reset
+- bundle exec rails db:drop
+- bundle exec rails db:create
+- bundle exec rails db:schema:load
+script:
+  - bundle exec rails db:migrate
+  - bundle exec rails db:seed
+addons:
+code_climate:
+  repo_token: 32ed5380cf48c453fec50624dee1af51b3e532f839bfe241abaa488c2d49cd26
+deploy:
+  provider: heroku
+  api_key:
+    secure: ad08c79e-3f62-4cdc-a430-ec08a5658a3a
+  app: bassan-test-admin
+  on:
+    repo: diegobassan/teste_admin
+  skip_cleanup: true

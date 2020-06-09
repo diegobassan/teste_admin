@@ -10,6 +10,9 @@ pt-BR:
       product:
         one: Produto
         other: Produtos
+      group:
+        one: Grupo
+        other: Grupos
     attributes:
       client:
         code: Código
@@ -22,6 +25,12 @@ pt-BR:
         description: Descrição
         minutes: Minutos
         online: Online
+        time: Tempo
+        group: Grupo
+      group:
+        name: Nome
+        description: Descrição
+        products: Produtos
         time: Tempo
       
       

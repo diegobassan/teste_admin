@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_224310) do
+ActiveRecord::Schema.define(version: 2020_06_09_032057) do
 
   create_table "clients", force: :cascade do |t|
     t.string "code"
@@ -20,11 +20,20 @@ ActiveRecord::Schema.define(version: 2020_06_08_224310) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "codes", force: :cascade do |t|
+  create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.string "address"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "groups_products", id: false, force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "group_id"
+    t.index ["group_id", "product_id"], name: "index_groups_products_on_group_id_and_product_id", unique: true
+    t.index ["group_id"], name: "index_groups_products_on_group_id"
+    t.index ["product_id", "group_id"], name: "index_groups_products_on_product_id_and_group_id", unique: true
+    t.index ["product_id"], name: "index_groups_products_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|

@@ -1,32 +1,4 @@
 RailsAdmin.config do |config|
-    config.model 'User' do
-      list do
-        field :email
-        field :created_at
-        field :updated_at
-      end
-    end
-
-    config.model Product do
-      list do
-        # virtual field
-        configure :time do
-          # any configuration
-        end
-        fields :name, :description, :online, :time
-      end
-    end
-
-    config.model 'Client' do
-      list do
-        field :code
-        field :name
-        field :address
-        field :created_at
-        field :updated_at
-      end
-    end
-
     config.main_app_name = ["Sistema Gerencial Integrado", ""]
 
     config.navigation_static_links = {
